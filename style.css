@@ -1,0 +1,201 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    background-color: #faf8ef;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    touch-action: none;
+}
+
+h1 {
+    height: 60px;
+    width: 100%;
+    color: #776e65;
+    margin: 0;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+}
+
+#msg{
+    height: 40px;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rebeccapurple; */
+    padding-top: 20px;
+    color: #776e65;
+}
+
+.game-container {
+    position: relative;
+    width: 400px;
+    margin: auto;
+}
+
+.scores {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: -40px;
+}
+
+.best, .score {
+    font-size: 23px;
+    font-weight: bold;
+    color: #776e65;
+}
+
+#board {
+    height: 400px;
+    width: 400px;
+    background-color: #cdc1b4;
+    border: 6px solid #bbada0;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+.tile {
+    height: 90px;
+    width: 90px;
+    border: 5px solid #bbada0;
+    font-size: 40px;
+    font-family: "Clear Sans", Arial, sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+}
+
+.t2 { background-color: #eee4da; color: #776e65; }
+.t4 { background-color: #ede0c8; color: #776e65; }
+.t8 { background-color: #f2b179; color: white; }
+.t16 { background-color: #f59563; color: white; }
+.t32 { background-color: #f67c5f; color: white; }
+.t64 { background-color: #f65e3b; color: white; }
+.t128 { background-color: #edcf72; color: white; }
+.t256 { background-color: #edcc61; color: white; }
+.t512 { background-color: #edc850; color: white; }
+.t1024 { background-color: #edc53f; color: white; }
+.t2048 { background-color: #edc22e; color: white; }
+
+body.blur-background #blur-background {
+    filter: blur(5px);
+    transition: filter 0.3s ease-in-out;
+}
+
+.swal2-backdrop-show {
+    backdrop-filter: blur(5px);
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+#reset, #undo {
+    height: 2.7rem;
+    width: 5rem;
+    background-color: #8f7a66;
+    color: white;
+    text-align: center;
+    line-height: 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: 3px solid #8f7a66;
+    transition: transform 0.3s;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#reset:hover, #undo:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#reset:focus, #undo:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(143, 122, 102, 0.5); /* This creates a subtle glow effect */
+}
+
+@media (max-width: 480px) {
+    .game-container {
+        width: 300px;
+    }
+    
+    .scores {
+        top: -30px;
+    }
+    
+    .best, .score {
+        font-size: 20px;
+    }
+    
+    #board {
+        height: 300px;
+        width: 300px;
+        margin-top: 50px;
+    }
+    
+    .tile {
+        height: 65px;
+        width: 65px;
+        font-size: 35px;
+    }
+    
+    #reset, #undo {
+        height: 2.7rem;
+        width: 4.7rem;
+        line-height: 2.7rem;
+        font-size: 1.2rem;
+        font-weight: 550;
+        padding: 0px;
+    }
+    
+    #reset:hover, #undo:hover {
+        transform: scale(1.1);
+    }
+    
+    h1 {
+        font-size: 40px;
+        color: #58524c;
+    }
+}
+
+@media (max-width: 350px) {
+    .game-container {
+        width: 280px;
+    }
+    
+    #board {
+        height: 280px;
+        width: 280px;
+    }
+    
+    .tile {
+        height: 60px;
+        width: 60px;
+        font-size: 24px;
+    }
+    
+    #reset, #undo {
+        height: 2rem;
+        width: 4rem;
+        line-height: 1.9rem;
+        font-size: 0.7rem;
+    }
+    
+    #reset:hover, #undo:hover {
+        transform: scale(1.1);
+    }
+}
